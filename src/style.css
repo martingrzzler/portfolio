@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(118, 255, 249);
+    background: linear-gradient(
+        0deg,
+        rgba(118, 255, 249, 1) 27%,
+        rgba(170, 170, 170, 1) 100%
+    );
+}
