@@ -5,8 +5,8 @@ body {
 
 canvas {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgb(118, 255, 249);
   background: linear-gradient(
     0deg,
@@ -15,10 +15,119 @@ canvas {
   );
 }
 
-.overlay {
+.me {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  z-index: 10;
+  bottom: 2vh;
+  width: 100%;
+  display: none;
+}
+
+.me > div {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  max-width: 400px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  display: flex;
+  height: 100px;
+  align-items: end;
+  justify-content: center;
+}
+
+#welcome {
+  position: absolute;
+}
+
+#projects,
+#experience,
+#contact {
+  display: none;
+}
+
+.fade-out {
+  animation: fade-out 1s;
+}
+
+.slide-up {
+  animation: slide-up 0.5s ease-in;
+}
+
+.slide-west-leave {
+  animation: slide-west-leave 0.7s;
+}
+
+.slide-west-enter {
+  animation-name: slide-west-enter;
+  animation-duration: 1s;
+}
+
+@keyframes slide-west-enter {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-west-leave {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    position: absolute;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+    position: absolute;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(calc(100% + 2vh));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinscale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+  }
 }

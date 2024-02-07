@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,12 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+    .loading-wrapper {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(118, 255, 249);
+      height: 100%;
+      width: 100%;
+    }
+
+    .loading-wrapper div {
+      margin-top: 20vh;
+    }
+
+    .loading-wrapper img {
+      animation: spinscale 1.5s infinite ease-in-out;
+      width: 100px;
+      height: 100px;
+    }
+
+    .loading-wrapper h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
   <body>
-    <canvas></canvas>
-    <div class="overlay">
-      <button id="climb">Climb</button>
-      <button id="glide">Come down</button>
-    </div>
+    <main>
+      <div class="loading-wrapper overlay">
+        <div>
+          <img src="/images/logo.svg" alt="" />
+          <h1>待</h1>
+        </div>
+      </div>
+      <div class="me">
+        <div>
+          <div id="welcome">
+            <p>Welcome to my World!</p>
+            <p>Start scrolling &darr;</p>
+          </div>
+          <div id="projects">
+            <p>Bio information about me bla blaa</p>
+          </div>
+          <div id="experience">
+            <p>My experience</p>
+          </div>
+          <div id="contact">
+            <p>Contact me</p>
+          </div>
+        </div>
+      </div>
+      <canvas></canvas>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
