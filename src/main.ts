@@ -48,7 +48,6 @@ window.addEventListener("load", async () => {
   }, 800);
 
   let isGliding = false;
-
   let ranMask = 0b0000;
   function animate() {
     requestAnimationFrame(animate);
@@ -58,45 +57,18 @@ window.addEventListener("load", async () => {
 
     if (View.scrollProgress() >= 5 && !(ranMask & 0b0001)) {
       ranMask |= 0b0001;
-      welcome.classList.add("slide-west-leave");
-      welcome.onanimationend = () => {
-        welcome.style.display = "none";
-        welcome.classList.remove("slide-west-leave");
-      };
-
-      projects.style.display = "block";
-      projects.classList.add("slide-west-enter");
-      projects.onanimationend = () => {
-        projects.classList.remove("slide-west-enter");
-      };
+      UI.exitOutOfView(welcome);
+      UI.enterIntoView(experience);
 
       climbAction.paused = false;
     } else if (View.scrollProgress() >= 30 && !(ranMask & 0b0010)) {
       ranMask |= 0b0010;
-      projects.classList.add("slide-west-leave");
-      projects.onanimationend = () => {
-        projects.style.display = "none";
-        projects.classList.remove("slide-west-leave");
-      };
-
-      experience.style.display = "block";
-      experience.classList.add("slide-west-enter");
-      experience.onanimationend = () => {
-        experience.classList.remove("slide-west-enter");
-      };
-    } else if (View.scrollProgress() >= 60 && !(ranMask & 0b0100)) {
+      UI.exitOutOfView(experience);
+      UI.enterIntoView(projects);
+    } else if (View.scrollProgress() >= 55 && !(ranMask & 0b0100)) {
       ranMask |= 0b0100;
-      experience.classList.add("slide-west-leave");
-      experience.onanimationend = () => {
-        experience.style.display = "none";
-        experience.classList.remove("slide-west-leave");
-      };
-
-      contact.style.display = "block";
-      contact.classList.add("slide-west-enter");
-      contact.onanimationend = () => {
-        contact.classList.remove("slide-west-enter");
-      };
+      UI.exitOutOfView(projects);
+      UI.enterIntoView(contact);
     } else if (
       View.scrollProgress() >= 90 &&
       !(ranMask & 0b1000) &&

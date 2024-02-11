@@ -21,3 +21,19 @@ export function slideInMeContainer(me: HTMLDivElement) {
   me.style.display = "block";
   me.classList.add("slide-up");
 }
+
+export function exitOutOfView(element: HTMLDivElement) {
+  element.classList.add("slide-west-leave");
+  element.onanimationend = () => {
+    element.style.display = "none";
+    element.classList.remove("slide-west-leave");
+  };
+}
+
+export function enterIntoView(element: HTMLDivElement) {
+  element.style.display = "block";
+  element.classList.add("slide-west-enter");
+  element.onanimationend = () => {
+    element.classList.remove("slide-west-enter");
+  };
+}
