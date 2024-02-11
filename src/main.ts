@@ -70,7 +70,7 @@ window.addEventListener("load", async () => {
       UI.exitOutOfView(projects);
       UI.enterIntoView(contact);
     } else if (
-      View.scrollProgress() >= 90 &&
+      View.scrollProgress() >= 80 &&
       !(ranMask & 0b1000) &&
       !climbAction.isRunning()
     ) {

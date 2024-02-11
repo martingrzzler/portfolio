@@ -3,7 +3,7 @@ import * as THREE from "three";
 export let scrollY = 0;
 let targetScrollY = 0;
 const damping = 0.05;
-export const defaultPosition = new THREE.Vector3(0, 10, 30);
+export const defaultPosition = new THREE.Vector3(0, 12, 30);
 
 export const camera = new THREE.PerspectiveCamera(
   75,
