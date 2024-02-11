@@ -7,10 +7,10 @@ canvas {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgb(118, 255, 249);
+  background: rgb(118, 198, 255);
   background: linear-gradient(
     0deg,
-    rgba(118, 255, 249, 1) 27%,
+    rgba(118, 198, 255, 1) 27%,
     rgba(170, 170, 170, 1) 100%
   );
 }
@@ -60,6 +60,19 @@ canvas {
 .slide-west-enter {
   animation-name: slide-west-enter;
   animation-duration: 1s;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.contact-icons img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
 @keyframes slide-west-enter {
