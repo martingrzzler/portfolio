@@ -3,7 +3,6 @@ import * as THREE from "three";
 export let scrollY = 0;
 let targetScrollY = 0;
 const damping = 0.05;
-let lastTouchY = 0;
 
 export const defaultPosition = new THREE.Vector3(0, 12, 30);
 
@@ -20,24 +19,30 @@ export function onWindow(renderer: THREE.WebGLRenderer) {
   });
 
   window.addEventListener("resize", () => {
+    //@ts-ignore
+    if (navigator.userAgentData.mobile) return;
     onWindowResize(camera, renderer);
   });
 
   // workaround for mobile
-  window.addEventListener("touchmove", (event) => {
-    const touchY = event.touches[0].clientY;
-    if (lastTouchY) {
-      targetScrollY += (lastTouchY - touchY) * 3;
+  let prevClientY = 0;
+  window.addEventListener("touchmove", (e) => {
+    const currentClientY = e.touches[0].clientY;
+    const deltaY = prevClientY !== 0 ? prevClientY - currentClientY : null;
+    if (!deltaY) {
+      prevClientY = currentClientY;
+      return;
     }
-    lastTouchY = touchY;
+    window.dispatchEvent(
+      new WheelEvent("wheel", {
+        deltaY: deltaY * 5,
+      })
+    );
+    prevClientY = currentClientY;
   });
 
   window.addEventListener("touchend", () => {
-    lastTouchY = 0;
-  });
-
-  window.addEventListener("scroll", (e) => {
-    console.log(e);
+    prevClientY = 0;
   });
 }
 
