@@ -12,7 +12,7 @@ export function getElements() {
     canvas: document.querySelector("canvas") as HTMLCanvasElement,
     meContainer: document.querySelector(".me") as HTMLDivElement,
     welcome: document.querySelector("#welcome") as HTMLDivElement,
-    projects: document.querySelector("#projects") as HTMLDivElement,
+    skills: document.querySelector("#skills") as HTMLDivElement,
     experience: document.querySelector("#experience") as HTMLDivElement,
     contact: document.querySelector("#contact") as HTMLDivElement,
   };

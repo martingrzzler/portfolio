@@ -19,8 +19,6 @@ export function onWindow(renderer: THREE.WebGLRenderer) {
   });
 
   window.addEventListener("resize", () => {
-    //@ts-ignore
-    if (navigator.userAgentData.mobile) return;
     onWindowResize(camera, renderer);
   });
 

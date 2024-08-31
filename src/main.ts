@@ -5,15 +5,8 @@ import * as World from "./world";
 import * as UI from "./ui";
 
 window.addEventListener("load", async () => {
-  const {
-    loading,
-    canvas,
-    meContainer,
-    welcome,
-    projects,
-    experience,
-    contact,
-  } = UI.getElements();
+  const { loading, canvas, meContainer, welcome, skills, experience, contact } =
+    UI.getElements();
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
@@ -64,10 +57,10 @@ window.addEventListener("load", async () => {
     } else if (View.scrollProgress() >= 30 && !(ranMask & 0b0010)) {
       ranMask |= 0b0010;
       UI.exitOutOfView(experience);
-      UI.enterIntoView(projects);
+      UI.enterIntoView(skills);
     } else if (View.scrollProgress() >= 55 && !(ranMask & 0b0100)) {
       ranMask |= 0b0100;
-      UI.exitOutOfView(projects);
+      UI.exitOutOfView(skills);
       UI.enterIntoView(contact);
     } else if (
       View.scrollProgress() >= 80 &&

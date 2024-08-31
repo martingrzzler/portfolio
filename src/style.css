@@ -1,185 +1,180 @@
 body {
-  margin: 0;
-  padding: 0;
-  overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
 }
 
 canvas {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgb(118, 198, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(118, 198, 255, 1) 27%,
-    rgba(170, 170, 170, 1) 100%
-  );
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(118, 198, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(118, 198, 255, 1) 27%,
+        rgba(170, 170, 170, 1) 100%
+    );
 }
 
 .me {
-  position: fixed;
-  z-index: 10;
-  bottom: 2vh;
-  width: 100%;
-  display: none;
+    position: fixed;
+    z-index: 10;
+    bottom: 2vh;
+    width: 100%;
+    display: none;
 }
 
 .me > div {
-  font-family: "Inter", sans-serif;
-  text-align: center;
-  max-width: 400px;
-  margin-inline: auto;
-  padding-inline: 20px;
-  display: flex;
-  height: 100px;
-  align-items: end;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding-bottom: 20px;
-  border-radius: 3px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    max-width: 400px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    display: flex;
+    height: 100px;
+    align-items: end;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 20px;
+    border-radius: 3px;
 }
 
-#projects,
+#skills,
 #experience,
 #contact {
-  display: none;
+    display: none;
 }
 
 #name {
-  font-family: "JetBrains Mono", monospace;
-  color: rgb(184, 119, 0);
+    font-family: "JetBrains Mono", monospace;
+    color: rgb(184, 119, 0);
 }
 
-#projects > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+#skills > div {
+    display: flex;
+    gap: 5px;
+    font-size: 0.8em;
+    flex-wrap: wrap;
 }
 
-#projects > p {
-  font-family: "JetBrains Mono", monospace;
-  color: rgb(184, 119, 0);
+#skills > p {
+    font-family: "JetBrains Mono", monospace;
+    color: rgb(184, 119, 0);
+}
+
+#skills .tag {
+    background-color: rgba(118, 198, 255, 0.5);
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0;
 }
 
 .quote {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.5rem;
-}
-
-.project-link {
-  text-decoration: none;
-  color: black;
-  background-color: rgba(118, 198, 255, 0.5);
-  border-radius: 3px;
-  padding: 5px 10px;
-}
-
-.project-link:hover {
-  background-color: rgba(118, 198, 255, 0.8);
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5rem;
 }
 
 .fade-out {
-  animation: fade-out 1s;
+    animation: fade-out 1s;
 }
 
 .slide-up {
-  animation: slide-up 0.5s ease-in;
+    animation: slide-up 0.5s ease-in;
 }
 
 .slide-west-leave {
-  animation: slide-west-leave 0.7s;
+    animation: slide-west-leave 0.7s;
 }
 
 .slide-west-enter {
-  animation-name: slide-west-enter;
-  animation-duration: 1s;
+    animation-name: slide-west-enter;
+    animation-duration: 1s;
 }
 
 .contact-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .contact-icons img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: transform 200ms;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 200ms;
 }
 
 .contact-icons img:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 @keyframes slide-west-enter {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  30% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slide-west-leave {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-    position: absolute;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-    position: absolute;
-  }
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+        position: absolute;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+        position: absolute;
+    }
 }
 
 @keyframes slide-up {
-  0% {
-    transform: translateY(calc(100% + 2vh));
-  }
-  100% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(calc(100% + 2vh));
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes spinscale {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.5) rotate(0deg);
-  }
-  100% {
-    transform: scale(1) rotate(720deg);
-  }
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.5) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(720deg);
+    }
 }
